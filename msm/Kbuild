@@ -1,8 +1,8 @@
-LINUXINCLUDE    += -I$(EVA_ROOT)/include \
-                   -I$(EVA_ROOT)/include/uapi \
-				   -I$(EVA_ROOT)/include/uapi/eva
+LINUXINCLUDE    += -I$(srctree)/../modules/eva/include \
+                   -I$(srctree)/../modules/eva/include/uapi \
+                   -I$(srctree)/../modules/eva/include/uapi/eva
 
-ccflags-y += -I$(srctree)/drivers/media/platform/msm/synx/
+ccflags-y += -I$(srctree)/drivers/media/platform/msm/synx/ $(LINUXINCLUDE)
 
 # add flag to compile mmrm actual implementatio instead of stub version.
 # to follow up with mmrm team if techpack users need to define this for long term?
